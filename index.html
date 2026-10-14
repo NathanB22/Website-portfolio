@@ -569,6 +569,8 @@
 .cf-close2:hover{background:#000;color:#fff;}
 @media(max-width:560px){.cf-card{padding-top:60px;}}
 @media(prefers-reduced-motion:reduce){.contact-modal,.cf-card{transition:none !important;}}
+
+.site-header .brand .name b{font-weight:400;font-variant-numeric:tabular-nums;margin-left:.6em;color:#6B6B6B;}
 /* ---- Phones: show wide images whole, keep everything inside the screen ---- */
 @media(max-width:899px){
   .f-tile.wd.is-big{background:var(--wbg,#eee) !important;}
@@ -588,7 +590,7 @@
 
 <h1 class="sr-only">Nate Bercaw, graphic designer: brand identity, packaging and web design</h1>
 <header class="site-header">
-  <span class="brand"><span class="name">Graphic design, Branding, Web</span></span>
+  <span class="brand"><span class="name">Nate Bercaw, Graphic Designer</span></span>
   <nav aria-label="Primary"><a href="#" id="navWork"><i aria-hidden="true">[</i><span>Work</span><i aria-hidden="true">]</i></a><a href="#about" id="navAbout"><i aria-hidden="true">[</i><span>About</span><i aria-hidden="true">]</i></a></nav>
   <a class="contact" href="mailto:natebercawdesigns@gmail.com"><i aria-hidden="true">[</i><span>Send me a message</span><i aria-hidden="true">]</i></a>
 </header>
@@ -778,6 +780,7 @@ function setActive(j){
   lockUntil = performance.now() + 800; lockX = null;
   layout();
   playActive();
+  { const hc = document.getElementById('hdrCount'); if (hc) hc.textContent = String((active % N) + 1).padStart(2,'0') + ' / ' + String(N).padStart(2,'0'); }
   /* counter removed */
   if (false) counter.firstChild.animate([{transform:'translateY(70%)',opacity:0},{transform:'none',opacity:1}],{duration:500,easing:'cubic-bezier(.65,0,.25,1)'});
   document.documentElement.style.setProperty('--accent', ACCENTS[projects[active % N].key] || '#2437F5');
